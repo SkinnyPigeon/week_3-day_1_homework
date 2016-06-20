@@ -99,7 +99,33 @@ SELECT * FROM shows_users WHERE user_id = ( SELECT id FROM users WHERE name = 'V
 
   6. Deletes the user with the name 'Valerie Gibson'.
 
+  DELETE FROM users WHERE name = 'Valerie Gibson';
+  SELECT name FROM users;
+
+  Rick Henri
+  Jay Chetty
+  Keith Douglas
+  Ashleigh Adams
+  Euan Blackledge
+  Chris Flint
+  Nico di Lillo
+  Joe Maher
+  Marie Moyles
+  Iain Stewart
+  Megan Strachan
+  Russell Williams
+  Sam Werngren
+  Natalie Simpson
+  Davide de Lerma
+  Josh Kearns
+  Renwick Drysdale
+  Brian Morrice
+
   7. Deletes the shows for the user you just deleted.
+
+DELETE FROM "shows_users" WHERE user_id = 20
+
+I tried using ...user_id = (SELECT id FROM useers WHERE name = 'Valerie Gibson') but couldn't get it to work
 
 
 ## Section 2

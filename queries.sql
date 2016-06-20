@@ -12,5 +12,8 @@
 -- SELECT name FROM users;
 
 
-DELETE FROM users WHERE name = 'Valerie Gibson'
-SELECT name FROM users;
+-- DELETE FROM users WHERE name = 'Valerie Gibson';
+-- SELECT name FROM users;
+
+-- DELETE FROM "shows_users" WHERE user_id = 20
+

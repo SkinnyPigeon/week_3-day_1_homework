@@ -206,9 +206,26 @@ SELECT shows.name, shows.price FROM shows ORDER BY price LIMIT 1 OFFSET 1;
 
   16. Select the names of all users whose names start with the letter "N".
 
+  SELECT users.name FROM users WHERE users.name LIKE 'N%';
+
+        name       
+  -----------------
+   Nico di Lillo
+   Natalie Simpson
+  (2 rows)
 
 
   17. Select the names of users whose names contain "er".
+
+SELECT users.name FROM users WHERE users.name LIKE '%er%';
+  
+      name       
+-----------------
+ Joe Maher
+ Sam Werngren
+ Davide de Lerma
+(3 rows)
+
 
 
 ## Section 3

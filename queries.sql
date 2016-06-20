@@ -31,8 +31,9 @@
 
 -- SELECT shows.name, shows.price FROM shows WHERE shows.price = (SELECT MAX(shows.price) FROM SHOWS);
 
-SELECT shows.name, shows.price FROM shows ORDER BY price LIMIT 1 OFFSET 1;
+-- SELECT shows.name, shows.price FROM shows ORDER BY price LIMIT 1 OFFSET 1;
 
+-- SELECT users.name FROM users WHERE users.name LIKE '%er%';
 
 
 

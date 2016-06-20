@@ -70,7 +70,6 @@ INSERT INTO "users" (name) VALUES
 ('Josh Kearns'),
 ('Renwick Drysdale'),
 ('Brian Morrice'),
-('Val Gibson');
 
 CREATE TABLE "shows_users" (
   "id" serial8 primary key, 

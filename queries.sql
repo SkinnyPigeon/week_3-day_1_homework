@@ -47,12 +47,8 @@
 -- INNER JOIN shows ON shows.id = shows_users.show_id
 -- WHERE shows.name = 'Shitfaced Shakespeare';
 
-SELECT users.name, COUNT(shows) FROM shows_users
-INNER JOIN users ON users.id = shows_users.user_id 
-INNER JOIN shows ON shows.id = shows_users.show_id
-WHERE shows.name = 'Shitfaced Shakespeare';
-
-
+SELECT users.name FROM shows_users
+INNER JOIN users on users.id = shows_users.user_id;
 
 
 

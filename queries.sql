@@ -39,8 +39,32 @@
 -- INNER JOIN bitings ON bitings.victim_id = victims.id
 -- INNER JOIN zombies ON bitings.zombie_id = zombies.id WHERE zombies.name = 'Drooly Doris';
 
-SELECT "times"."time" FROM "times"
-INNER JOIN shows ON shows.id = show_id WHERE shows.name = 'Edinburgh Royal Tattoo';
+-- SELECT "times"."time" FROM "times"
+-- INNER JOIN shows ON shows.id = show_id WHERE shows.name = 'Edinburgh Royal Tattoo';
+
+-- SELECT COUNT(users) FROM shows_users
+-- INNER JOIN users ON users.id = shows_users.user_id 
+-- INNER JOIN shows ON shows.id = shows_users.show_id
+-- WHERE shows.name = 'Shitfaced Shakespeare';
+
+SELECT users.name, COUNT(shows) FROM shows_users
+INNER JOIN users ON users.id = shows_users.user_id 
+INNER JOIN shows ON shows.id = shows_users.show_id
+WHERE shows.name = 'Shitfaced Shakespeare';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

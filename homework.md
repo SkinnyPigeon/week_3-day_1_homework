@@ -245,6 +245,31 @@ SELECT users.name FROM users WHERE users.name LIKE '%er%';
 
   19. Select the number of users who want to see "Shitfaced Shakespeare".
 
+  SELECT COUNT(users) FROM shows_users
+  INNER JOIN users ON users.id = shows_users.user_id 
+  INNER JOIN shows ON shows.id = shows_users.show_id
+  WHERE shows.name = 'Shitfaced Shakespeare';
+
+   count 
+  -------
+       7
+  (1 row)
+
+
+
   20. Select all of the user names and the count of shows they're going to see.
 
   21. SELECT all users who are going to a show at 17:15.
+
+
+
+
+
+
+
+
+
+
+
+
+

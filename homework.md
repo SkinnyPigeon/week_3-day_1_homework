@@ -1,4 +1,4 @@
-## SQL Questions
+## SQL QuestiONs
 
 First create a database called fringe_shows
 ```
@@ -14,12 +14,12 @@ Populate the data using the script - fringeshows.sql
   psql -d fringe_shows -f fringeshows.sql
 ```
 
-Using the SQL Database file given to you as the source of data to answer the questions.  Copy the SQL command you have used to get the answer, and paste it below the question, along with the result they gave.
+Using the SQL Database file given to you as the source of data to answer the questiONs.  Copy the SQL command you have used to get the answer, and paste it below the questiON, alONg with the result they gave.
 
 
-## Section 1
+## SectiON 1
 
-  Revision of concepts that we've learnt in SQL today
+  RevisiON of cONcepts that we've learnt in SQL today
 
   1. Select the names of all users.
 
@@ -38,7 +38,7 @@ Using the SQL Database file given to you as the source of data to answer the que
   Megan Strachan
   Russell Williams
   Sam Werngren
-  Natalie Simpson
+  Natalie SimpsON
   Davide de Lerma
   Josh Kearns
   Renwick Drysdale
@@ -51,29 +51,29 @@ Using the SQL Database file given to you as the source of data to answer the que
   Le Haggis
   Paul Dabek Mischief 
   Best of Burlesque
-  Two become One
+  Two become ONe
   Urinetown
-  Two girls, one cup of comedy
+  Two girls, ONe cup of comedy
 
-  3. Insert a user with the name "Val Gibson" into the users table.
+  3. Insert a user with the name "Val GibsON" into the users table.
 
   INSERT INTO "users" (name) VALUES
-  ('Val Gibson');
+  ('Val GibsON');
 
-  4. Insert a record that Val Gibson wants to attend the show "Two girls, one cup of comedy".
+  4. Insert a record that Val GibsON wants to attend the show "Two girls, ONe cup of comedy".
 
-  INSERT INTO "shows_users" (show_id, user_id) VALUES ((SELECT id FROM shows WHERE name = 'Two girls, one cup of comedy'), ( SELECT id FROM users WHERE name = 'Val Gibson'));
+  INSERT INTO "shows_users" (show_id, user_id) VALUES ((SELECT id FROM shows WHERE name = 'Two girls, ONe cup of comedy'), ( SELECT id FROM users WHERE name = 'Val GibsON'));
 
-SELECT * FROM shows_users WHERE user_id = ( SELECT id FROM users WHERE name = 'Val Gibson')
+SELECT * FROM shows_users WHERE user_id = ( SELECT id FROM users WHERE name = 'Val GibsON')
 
  id | show_id | user_id 
 ----+---------+---------
  88 |      12 |      20
 
 
-  5. Updates the name of the "Val Gibson" user to be "Valerie Gibson".
+  5. Updates the name of the "Val GibsON" user to be "Valerie GibsON".
 
-  UPDATE users SET name = 'Valerie Gibson' WHERE name = 'Val Gibson';
+  UPDATE users SET name = 'Valerie GibsON' WHERE name = 'Val GibsON';
   SELECT name FROM users;
 
   Rick Henri
@@ -89,17 +89,17 @@ SELECT * FROM shows_users WHERE user_id = ( SELECT id FROM users WHERE name = 'V
   Megan Strachan
   Russell Williams
   Sam Werngren
-  Natalie Simpson
+  Natalie SimpsON
   Davide de Lerma
   Josh Kearns
   Renwick Drysdale
   Brian Morrice
-  Valerie Gibson
+  Valerie GibsON
 
 
-  6. Deletes the user with the name 'Valerie Gibson'.
+  6. Deletes the user with the name 'Valerie GibsON'.
 
-  DELETE FROM users WHERE name = 'Valerie Gibson';
+  DELETE FROM users WHERE name = 'Valerie GibsON';
   SELECT name FROM users;
 
   Rick Henri
@@ -115,7 +115,7 @@ SELECT * FROM shows_users WHERE user_id = ( SELECT id FROM users WHERE name = 'V
   Megan Strachan
   Russell Williams
   Sam Werngren
-  Natalie Simpson
+  Natalie SimpsON
   Davide de Lerma
   Josh Kearns
   Renwick Drysdale
@@ -126,9 +126,9 @@ SELECT * FROM shows_users WHERE user_id = ( SELECT id FROM users WHERE name = 'V
 DELETE FROM "shows_users" WHERE user_id = 20
 
 
-## Section 2
+## SectiON 2
 
-  This section involves more complex queries.  You will need to go and find out about aggregate funcions in SQL to answer some of the next questions.
+  This sectiON involves more complex queries.  You will need to go and find out about aggregate funciONs in SQL to answer some of the next questiONs.
 
   9. Select the names and prices of all shows, ordered by price in ascending order.
 
@@ -136,18 +136,18 @@ DELETE FROM "shows_users" WHERE user_id = 20
 
                     name                   | price 
   -----------------------------------------+-------
-   Two girls, one cup of comedy            |  6.00
+   Two girls, ONe cup of comedy            |  6.00
    Best of Burlesque                       |  7.99
-   Two become One                          |  8.50
+   Two become ONe                          |  8.50
    Urinetown                               |  8.50
    Paul Dabek Mischief                     | 12.99
    Le Haggis                               | 12.99
-   Joe Stilgoe: Songs on Film – The Sequel | 16.50
-   Game of Thrones - The Musical           | 16.50
+   Joe Stilgoe: SONgs ON Film – The Sequel | 16.50
+   Game of ThrONes - The Musical           | 16.50
    Shitfaced Shakespeare                   | 16.50
-   Aaabeduation – A Magic Show             | 17.99
+   AaabeduatiON – A Magic Show             | 17.99
    Camille O'Sullivan                      | 17.99
-   Balletronics                            | 32.00
+   BalletrONics                            | 32.00
    Edinburgh Royal Tattoo                  | 32.99
   (13 rows)
 
@@ -194,7 +194,7 @@ SELECT SUM(shows.price) FROM shows WHERE shows.price < 20;
   (1 row)
 
 
-  15. Select the name and price of the second from cheapest show.
+  15. Select the name and price of the secONd from cheapest show.
 
 SELECT shows.name, shows.price FROM shows ORDER BY price LIMIT 1 OFFSET 1;
 
@@ -211,11 +211,11 @@ SELECT shows.name, shows.price FROM shows ORDER BY price LIMIT 1 OFFSET 1;
         name       
   -----------------
    Nico di Lillo
-   Natalie Simpson
+   Natalie SimpsON
   (2 rows)
 
 
-  17. Select the names of users whose names contain "er".
+  17. Select the names of users whose names cONtain "er".
 
 SELECT users.name FROM users WHERE users.name LIKE '%er%';
 
@@ -228,9 +228,9 @@ SELECT users.name FROM users WHERE users.name LIKE '%er%';
 
 
 
-## Section 3
+## SectiON 3
 
-  The following questions can be answered by using nested SQL statements but ideally you should learn about JOIN clauses to answer them.
+  The following questiONs can be answered by using nested SQL statements but ideally you should learn about JOIN clauses to answer them.
 
   18. Select the time for the Edinburgh Royal Tattoo.
 
@@ -260,8 +260,8 @@ SELECT users.name FROM users WHERE users.name LIKE '%er%';
   20. Select all of the user names and the count of shows they're going to see.
 
   SELECT users, COUNT(shows) FROM shows_users
-  INNER JOIN users on users.id = shows_users.user_id
-  INNER JOIN shows on shows.id = shows_users.show_id
+  INNER JOIN users ON users.id = shows_users.user_id
+  INNER JOIN shows ON shows.id = shows_users.show_id
   GROUP BY users;
 
 
@@ -279,16 +279,30 @@ SELECT users.name FROM users WHERE users.name LIKE '%er%';
    (11,"Megan Strachan")   |     5
    (12,"Russell Williams") |     6
    (13,"Sam Werngren")     |     5
-   (14,"Natalie Simpson")  |     9
+   (14,"Natalie SimpsON")  |     9
    (15,"Davide de Lerma")  |     7
   (15 rows)
 
 
   21. SELECT all users who are going to a show at 17:15.
 
+  SELECT users.name FROM shows_users
+  INNER JOIN users ON users.id = shows_users.user_id
+  INNER JOIN "times" ON "times".show_id = shows_users.show_id
+  WHERE "times"."time" = '17:15';
 
-
-
+  Rick Henri
+  Keith Douglas
+  Euan Blackledge
+  Joe Maher
+  Marie Moyles
+  Sam Werngren
+  Davide de Lerma
+  Megan Strachan
+  Russell Williams
+  Sam Werngren
+  Iain Stewart
+  Natalie Simpson
 
 
 

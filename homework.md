@@ -125,8 +125,6 @@ SELECT * FROM shows_users WHERE user_id = ( SELECT id FROM users WHERE name = 'V
 
 DELETE FROM "shows_users" WHERE user_id = 20
 
-I tried using ...user_id = (SELECT id FROM useers WHERE name = 'Valerie Gibson') but couldn't get it to work
-
 
 ## Section 2
 
@@ -134,19 +132,81 @@ I tried using ...user_id = (SELECT id FROM useers WHERE name = 'Valerie Gibson')
 
   9. Select the names and prices of all shows, ordered by price in ascending order.
 
+  SELECT shows.name, shows.price FROM shows ORDER BY shows.price ASC;
+
+                    name                   | price 
+  -----------------------------------------+-------
+   Two girls, one cup of comedy            |  6.00
+   Best of Burlesque                       |  7.99
+   Two become One                          |  8.50
+   Urinetown                               |  8.50
+   Paul Dabek Mischief                     | 12.99
+   Le Haggis                               | 12.99
+   Joe Stilgoe: Songs on Film – The Sequel | 16.50
+   Game of Thrones - The Musical           | 16.50
+   Shitfaced Shakespeare                   | 16.50
+   Aaabeduation – A Magic Show             | 17.99
+   Camille O'Sullivan                      | 17.99
+   Balletronics                            | 32.00
+   Edinburgh Royal Tattoo                  | 32.99
+  (13 rows)
+
+
   10. Select the average price of all shows.
+
+  SELECT AVG(shows.price) FROM shows;
+  15.9569230769230769 (£15.96)
+
 
   11. Select the price of the least expensive show.
 
+  SELECT MIN(shows.price) FROM shows;
+   min  
+  ------
+   6.00
+  (1 row)
+
   12. Select the sum of the price of all shows.
+
+  SELECT SUM(shows.price) FROM shows;
+    sum   
+  --------
+   207.44
+  (1 row)
 
   13. Select the sum of the price of all shows whose prices is less than £20.
 
+SELECT SUM(shows.price) FROM shows WHERE shows.price < 20;
+
+  sum   
+--------
+ 142.45
+(1 row)
+
+
   14. Select the name and price of the most expensive show.
+
+  SELECT shows.name, shows.price FROM shows WHERE shows.price = (SELECT MAX(shows.price) FROM SHOWS);
+
+            name          | price 
+  ------------------------+-------
+   Edinburgh Royal Tattoo | 32.99
+  (1 row)
+
 
   15. Select the name and price of the second from cheapest show.
 
+SELECT shows.name, shows.price FROM shows ORDER BY price LIMIT 1 OFFSET 1;
+
+       name        | price 
+-------------------+-------
+ Best of Burlesque |  7.99
+(1 row)
+
+
   16. Select the names of all users whose names start with the letter "N".
+
+
 
   17. Select the names of users whose names contain "er".
 

@@ -17,3 +17,22 @@
 
 -- DELETE FROM "shows_users" WHERE user_id = 20
 
+
+-- SELECT shows.name, shows.price FROM shows ORDER BY shows.price ASC;
+
+-- SELECT AVG(shows.price) FROM shows;
+
+-- SELECT MIN(shows.price) FROM shows;
+
+-- SELECT SUM(shows.price) FROM shows;
+
+
+-- SELECT SUM(shows.price) FROM shows WHERE shows.price < 20;
+
+-- SELECT shows.name, shows.price FROM shows WHERE shows.price = (SELECT MAX(shows.price) FROM SHOWS);
+
+SELECT shows.name, shows.price FROM shows ORDER BY price LIMIT 1 OFFSET 1;
+
+
+
+

@@ -259,6 +259,31 @@ SELECT users.name FROM users WHERE users.name LIKE '%er%';
 
   20. Select all of the user names and the count of shows they're going to see.
 
+  SELECT users, COUNT(shows) FROM shows_users
+  INNER JOIN users on users.id = shows_users.user_id
+  INNER JOIN shows on shows.id = shows_users.show_id
+  GROUP BY users;
+
+
+
+   (1,"Rick Henri")        |     5
+   (2,"Jay Chetty")        |     5
+   (3,"Keith Douglas")     |     6
+   (4,"Ashleigh Adams")    |     4
+   (5,"Euan Blackledge")   |     4
+   (6,"Chris Flint")       |     4
+   (7,"Nico di Lillo")     |     4
+   (8,"Joe Maher")         |     5
+   (9,"Marie Moyles")      |     7
+   (10,"Iain Stewart")     |     6
+   (11,"Megan Strachan")   |     5
+   (12,"Russell Williams") |     6
+   (13,"Sam Werngren")     |     5
+   (14,"Natalie Simpson")  |     9
+   (15,"Davide de Lerma")  |     7
+  (15 rows)
+
+
   21. SELECT all users who are going to a show at 17:15.
 
 

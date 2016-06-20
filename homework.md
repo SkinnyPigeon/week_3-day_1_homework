@@ -218,7 +218,7 @@ SELECT shows.name, shows.price FROM shows ORDER BY price LIMIT 1 OFFSET 1;
   17. Select the names of users whose names contain "er".
 
 SELECT users.name FROM users WHERE users.name LIKE '%er%';
-  
+
       name       
 -----------------
  Joe Maher
@@ -233,6 +233,15 @@ SELECT users.name FROM users WHERE users.name LIKE '%er%';
   The following questions can be answered by using nested SQL statements but ideally you should learn about JOIN clauses to answer them.
 
   18. Select the time for the Edinburgh Royal Tattoo.
+
+  SELECT "times"."time" FROM "times"
+  INNER JOIN shows ON shows.id = show_id WHERE shows.name = 'Edinburgh Royal Tattoo';
+
+   time  
+  -------
+   22:00
+  (1 row)
+
 
   19. Select the number of users who want to see "Shitfaced Shakespeare".
 

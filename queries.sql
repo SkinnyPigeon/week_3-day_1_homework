@@ -35,5 +35,12 @@
 
 -- SELECT users.name FROM users WHERE users.name LIKE '%er%';
 
+-- SELECT victims.name AS victim_name, zombies.name AS zombie_name, bitings.infected_on FROM victims
+-- INNER JOIN bitings ON bitings.victim_id = victims.id
+-- INNER JOIN zombies ON bitings.zombie_id = zombies.id WHERE zombies.name = 'Drooly Doris';
+
+SELECT "times"."time" FROM "times"
+INNER JOIN shows ON shows.id = show_id WHERE shows.name = 'Edinburgh Royal Tattoo';
+
 
 
